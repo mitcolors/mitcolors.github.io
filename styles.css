@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23f1f1f1' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+  min-height: 100vh;
+}
+
+.page {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 8rem;
+  overflow: hidden;
+}
+
+.content {
+  max-width: 520px;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 4.4rem;
+  line-height: 1.1;
+  color: #121417;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Decorative circles */
+
+.decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* Sizes */
+.big {
+  width: 900px;
+  height: 900px;
+}
+
+.small {
+  width: 290px;
+  height: 290px;
+}
+
+/* Colors */
+.purple {
+  background-color: #535CFF;
+}
+
+.orange {
+  background-color: #F553FF;
+}
+
+.teal {
+  background-color: #FFF553;
+}
+
+/* Positions */
+.purple {
+  top: -120px;
+  right: -200px;
+}
+
+.orange {
+  top: 60%;
+  right: 400px;
+}
+
+.teal {
+  top: 40%;
+  right: 700px;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 2rem;
+    align-items: flex-start;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  /* Calm the decorations down on small screens */
+  .big {
+    width: 380px;
+    height: 380px;
+    top: -160px;
+    right: -200px;
+  }
+
+  .orange {
+    top: 55%;
+    right: 120px;
+  }
+
+  .teal {
+    top: 62%;
+    right: 80px;
+  }
+
+.png-underline {
+  position: relative;       /* needed for pseudo-element positioning */
+  display: inline-block;    /* so width matches word */
+}
+
+.png-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;                /* sits right under the text */
+  height: 60px;             /* adjust based on your PNG height */
+  background: url('highlight.png') no-repeat;
+  background-size: cover;   /* makes it fill the width of the word */
+  z-index: -1;              /* pushes it behind the text */
+}
+
